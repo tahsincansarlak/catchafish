@@ -1,0 +1,33 @@
+// Tahsin Can Sarlak
+// Catch A Fish
+
+// Gets the necessary library
+#include <Servo.h>
+
+// Starts a servo variable
+Servo myservo1; 
+
+// The pin on ESP8266 to connect the servo motor to 
+int mot = 5;
+
+// Initializes a position
+int pos = 0; 
+
+void setup() {
+    // Attaches the servo motor to pin 5
+    myservo1.attach(mot);
+
+    // Sets the motor as output
+    pinMode(mot, OUTPUT);
+}
+
+void loop() {
+    // Creates a random number between 0 and 140
+    pos = random(0,140);
+
+    // Moves the mmotor into that specific position
+    myservo1.write(pos);
+
+    // Stops in that position for 1 second
+    delay(1000);
+}
